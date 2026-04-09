@@ -27,7 +27,7 @@
 - **Difficulty:** Apprentice
 - **Vuln Type:** SQL Injection (Authentication Bypass)
 - **Location:** Username field in login form
-- **Payload Used:** admin'--
+- **Payload Used:** admin' OR 1=1-- 
 - **What happened:** Logged in as administrator without knowing the password
 - **Why it worked:** -- commented out the password check in SQL query completely
 - **Mitigation:** Use parameterized queries, never concatenate user input into SQL query directly
