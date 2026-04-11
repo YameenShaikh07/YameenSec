@@ -40,7 +40,7 @@
 - **Vuln Type:** SQL Injection (UNION based)
 - **Location:** category parameter (GET request)
 - **Tool Used:** Burp Suite Repeater
-- **Payload Used:** ' UNION SELECT NULL,NULL,NULL--
+- **Payload Used:** ' UNION SELECT NULL,NULL,NULL-- (url encoded - ' UNION+select+NULL,+NULL,+NULL-- )
 - **What happened:** Server returned 200 OK confirming 3 columns exist in the query
 - **Why it worked:** UNION requires same number of columns — kept adding NULLs until no error
 - **Mitigation:** Use parameterized queries / prepared statements
