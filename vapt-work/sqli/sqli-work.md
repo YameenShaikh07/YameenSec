@@ -31,3 +31,16 @@
 - **What happened:** Logged in as administrator without knowing the password
 - **Why it worked:** -- commented out the password check in SQL query completely
 - **Mitigation:** Use parameterized queries, never concatenate user input into SQL query directly
+---
+
+## Lab 3 — UNION Attack (Determine Number of Columns)
+
+- **Lab Link:** https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns
+- **Difficulty:** Practitioner
+- **Vuln Type:** SQL Injection (UNION based)
+- **Location:** category parameter (GET request)
+- **Tool Used:** Burp Suite Repeater
+- **Payload Used:** ' UNION SELECT NULL,NULL,NULL--
+- **What happened:** Server returned 200 OK confirming 3 columns exist in the query
+- **Why it worked:** UNION requires same number of columns — kept adding NULLs until no error
+- **Mitigation:** Use parameterized queries / prepared statements
