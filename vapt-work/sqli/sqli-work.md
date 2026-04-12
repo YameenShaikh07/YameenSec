@@ -70,7 +70,8 @@
 - **Credentials Found:** administrator, carlos, wiener with their passwords
 - **Why it worked:** UNION joined results from users table into the original query output
 - **Mitigation:** Use parameterized queries / prepared statements
-<img width="1894" height="1033" alt="PoC For lab 4" src="https://github.com/user-attachments/assets/8bada725-19e8-4e79-b1c2-3bda7c534d08" />
+
+
 <img width="1894" height="1033" alt="PoC For lab 4" src="https://github.com/user-attachments/assets/4c3ca926-b2ea-4481-9a60-45dd8dd709ba" />
 <img width="1920" height="954" alt="lab4" src="https://github.com/user-attachments/assets/60c4b8a9-aa31-42ab-860c-d9635d93225a" />
 <img width="1918" height="950" alt="lab4 1" src="https://github.com/user-attachments/assets/4abbb7f9-cd46-4ea2-b067-4d648f47d0b8" />
