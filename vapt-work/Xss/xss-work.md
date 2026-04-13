@@ -90,4 +90,34 @@ function hax() {
 <img width="1129" height="434" alt="lab2xss2" src="https://github.com/user-attachments/assets/e3cf5261-4ae2-4eb0-8b40-0cea5ddde5af" />
 <img width="1730" height="917" alt="lab2xss3" src="https://github.com/user-attachments/assets/ba58e7a5-23fd-419b-bd59-fd861e064a35" />
 
+---
+
+## Lab 3 — Reflected DOM XSS
+
+- **Lab Link:** https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-dom-xss-reflected
+- **Difficulty:** Practitioner
+- **Vuln Type:** Reflected DOM XSS
+- **Location:** Search parameter (GET request)
+- **Tool Used:** Burp Suite Repeater + Browser
+
+### Steps
+1. Opened the lab and searched for a test string
+2. Intercepted the request in Burp and sent to Repeater
+3. Noticed search term reflected inside a JSON response via eval()
+4. Normal XSS payloads were blocked — quotes were being escaped
+5. Discovered backslash was NOT being escaped
+6. Used backslash to cancel out the escaping of the double quote
+7. Injected payload to break out of JSON string and execute alert
+8. Alert popup appeared with value 1 — lab solved
+
+- **Payload Used:** \"-alert(1)}//
+- **What happened:** Backslash cancelled quote escaping — JavaScript executed
+- **Why it worked:** App escaped quotes but not backslashes — double backslash neutralized the escape
+- **Mitigation:** Sanitize all special characters including backslashes, avoid eval() on user input
+
+
+<img width="1834" height="970" alt="xss reflected dom" src="https://github.com/user-attachments/assets/3ab4086c-dfe8-4cfd-8387-c29980b12d66" />
+<img width="1892" height="653" alt="reflected dom2" src="https://github.com/user-attachments/assets/3f367a63-c27e-4ca1-8ea9-0bbc7ec3ff44" />
+
+
 
