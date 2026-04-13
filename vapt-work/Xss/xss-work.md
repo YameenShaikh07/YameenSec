@@ -119,5 +119,39 @@ function hax() {
 <img width="1834" height="970" alt="xss reflected dom" src="https://github.com/user-attachments/assets/3ab4086c-dfe8-4cfd-8387-c29980b12d66" />
 <img width="1892" height="653" alt="reflected dom2" src="https://github.com/user-attachments/assets/3f367a63-c27e-4ca1-8ea9-0bbc7ec3ff44" />
 
+---
+
+## Lab 4 — DOM XSS Using Web Messages
+
+- **Lab Link:** https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages
+- **Difficulty:** Practitioner
+- **Vuln Type:** DOM XSS via Web Messages
+- **Location:** postMessage event listener on homepage
+- **Tool Used:** Exploit Server + Browser
+
+### Steps
+1. Opened the lab and inspected the page source
+2. Found an event listener accepting web messages without origin validation
+3. Went to the exploit server
+4. Crafted an iframe payload that sends a malicious web message on load
+5. Stored the exploit and delivered it to the victim
+6. Victim's browser loaded the iframe and postMessage triggered
+7. Malicious message injected into DOM and print() executed
+8. Access logs confirmed victim browser hit the exploit
+9. Lab solved successfully
+
+### Payload Used
+```html
+<iframe src="https://LAB-ID.web-security-academy.net//" 
+onload="this.contentWindow.postMessage('<img src=1 onerror=print()>','*')">
+```
+
+- **What happened:** Victim browser executed our JavaScript via postMessage injection
+- **Why it worked:** Event listener inserted message data into DOM without sanitization or origin check
+- **Mitigation:** Always validate origin in postMessage listeners, sanitize incoming message data
+
+<img width="1655" height="943" alt="dom xss1" src="https://github.com/user-attachments/assets/b685a422-ee31-4827-98ea-3b5bfb4963df" />
+<img width="1781" height="729" alt="dom xss2logs" src="https://github.com/user-attachments/assets/0b2991c1-8a13-4208-bd61-1f3b425023e6" />
+
 
 
