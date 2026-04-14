@@ -20,4 +20,4 @@
 - Email: yameenshaikh844@gmail.com
 
 ---
-*Currently open to SOC Analyst & VAPT roles*
+*Currently open to VAPT roles & SOC Analyst*
