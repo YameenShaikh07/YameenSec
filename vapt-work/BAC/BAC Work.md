@@ -27,5 +27,5 @@
 - **Why it worked:** No authentication or access control applied to admin panel URL
 - **Mitigation:** Implement proper authentication on all admin endpoints, never rely on obscurity
 
-<img width="1777" height="953" alt="BAC1" src="https://github.com/user-attachments/assets/1acf0606-eba9-482d-80c7-113d5208f275" />
 <img width="1194" height="587" alt="BAC1 1" src="https://github.com/user-attachments/assets/85ab0c2b-593a-4347-abe3-9ac8ca00ec86" />
+<img width="1777" height="953" alt="BAC1" src="https://github.com/user-attachments/assets/1acf0606-eba9-482d-80c7-113d5208f275" />
