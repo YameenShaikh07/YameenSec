@@ -10,10 +10,10 @@
 - **Frameworks:** OWASP Top 10 | CVSS
 
 ## 📂 What's in This Portfolio
-- 🐛 Web App Pentest Write-ups
-- 🦠 Malware Analysis Reports
-- 🔍 Threat Hunt Write-ups
-- 📏 Sigma & YARA Rules
+-  Web App Pentest Write-ups
+-  Malware Analysis Reports
+-  Threat Hunt Write-ups
+-  Sigma & YARA Rules
 
 ## 📫 Connect With Me
 - LinkedIn: www.linkedin.com/in/yameenshaikh01
